@@ -1,0 +1,9 @@
+site_name: Micro:bit - Makerspace Hilpoltstein
+site_url: https://makes-hacks-hip.github.io/microbit/
+nav:
+    - Repair-Café: https://www.repaircafe-hilpoltstein.de
+    - Makerspace: https://makes-hacks-hip.de
+    - Makerspace@Github: https://makes-hacks-hip.github.io
+theme: readthedocs
+repo_url: https://makes-hacks-hip.github.io/microbit/
+edit_uri: edit/main/docs/
