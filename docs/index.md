@@ -4,6 +4,17 @@ Der [BBC Micro:bit](https://microbit.org) ist ein kleines embedded Device mit ei
 
 Die Skripte in diesem Repository sind Inspiriert durch "Make: Getting Started with the micro:bit" von Wolfram Donat.
 
+## Hardware
+
+Die Dokumentation für die Micro:bit Hardware findet sich auf [tech.microbit.org](https://tech.microbit.org/hardware/).
+
+![Micro:bit Übersicht](microbit-overview-2-2.png)
+
+![Pins](edge-connector-2.svg)
+![Micro:bit Funktionsblöcke](v2-2-block.svg)
+
+
+
 ## Programmieren mit MicroPython
 
 Auf der Micro:bit Seite wird ein [Online Editor](https://python.microbit.org/v/3) angeboten. Diese ist die einfachste Möglichkeit um mit dem Programmieren zu starten, und eine MicroPython hex-Datei für den Micro:bit zu bekommen.
@@ -44,6 +55,8 @@ Die [API Referenz](https://python.microbit.org/v/3/reference) (Application Progr
 
 Die Mirco:bit API stellt ein "display" Objekt bereit, mit dem auf einfach Texte und vordefinierte Bilder auf dem Dot-Matrix-Display angezeigt werden können.
 
+#### Vordefinierte Grafiken
+
 Bilder können über Konstanten ausgewählt werden. Ein Herz kann z.B. mit dem folgenden Skript angezeigt werden:
 
 ```python
@@ -52,7 +65,9 @@ from microbit import *
 display.show(Image.HEART)
 sleep(1000)
 ```
-Die Liste mit allen vordefinierten Bildern findet sich in der [API](https://python.microbit.org/v/3/api/microbit.Image). Das folgende Skript zeigt im Wechsel das große und kleine Herz dar:
+Die Liste mit allen vordefinierten Bildern findet sich in der [API](https://python.microbit.org/v/3/api/microbit.Image). 
+
+Das folgende Skript zeigt im Wechsel das große und kleine Herz dar:
 
 ```python
 from microbit import *
@@ -63,5 +78,37 @@ while True:
     display.show(Image.HEART_SMALL)
     sleep(1000)
 ```
+
+#### Text scrollen
+
+#### Text anzeigen
+
+#### Pixel
+
+### Knöpfe
+
+### Accelerometer
+
+### Bluetooth
+
+### Licht-Sensor
+
+### Temperatur-Sensor
+
+### Kompass
+
+### Töne
+
+### Mikrofon
+
+### Touch-Logo
+
+## Projekt Schrittzähler
+
+Mirco:bit als Schrittzähler
+
+## Projekt Tracks
+
+Tracks aufzeichnen mit Kompass und Beschleunigungssensor
 
 
