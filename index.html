@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" /><link rel="canonical" href="https://makes-hacks-hip.github.io/microbit/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Micro:bit - Makerspace Hilpoltstein</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Projekt Micro:bit";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/microbit/";
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> Micro:bit - Makerspace Hilpoltstein
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Repair-Café & Makerspace</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://www.repaircafe-hilpoltstein.de">Repair-Café</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://makes-hacks-hip.de">Makerspace</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://makes-hacks-hip.github.io">Makerspace@Github</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">Micro:bit - Makerspace Hilpoltstein</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Projekt Micro:bit</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/makes-hacks-hip/microbit/edit/main/docs/index.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="projekt-microbit">Projekt Micro:bit</h1>
+<p>Der <a href="https://microbit.org">BBC Micro:bit</a> ist ein kleines embedded Device mit einem ARM M-Core und einigen Sensoren, Tastern und LEDs. Die Zielgruppe des Mirco:bit sind Schüler.</p>
+<p>Die Skripte in diesem Repository sind Inspiriert durch "Make: Getting Started with the micro:bit" von Wolfram Donat.</p>
+<h2 id="hardware">Hardware</h2>
+<p>Die Dokumentation für die Micro:bit Hardware findet sich auf <a href="https://tech.microbit.org/hardware/">tech.microbit.org</a>.</p>
+<p><img alt="Micro:bit Übersicht" src="microbit-overview-2-2.png" /></p>
+<p><img alt="Pins" src="edge-connector-2.svg" />
+<img alt="Micro:bit Funktionsblöcke" src="v2-2-block.svg" /></p>
+<h2 id="programmieren-mit-micropython">Programmieren mit MicroPython</h2>
+<p>Auf der Micro:bit Seite wird ein <a href="https://python.microbit.org/v/3">Online Editor</a> angeboten. Diese ist die einfachste Möglichkeit um mit dem Programmieren zu starten, und eine MicroPython hex-Datei für den Micro:bit zu bekommen.</p>
+<p>Wenn der Micro:bit mit dem Rechner verbunden ist erscheint er als externen Laufwerk. Die hex-Datei die mit dem Online-Editor erzeugt wurde kann auf den Microbit übertragen werden indem sie auf dieses Laufwerk kopiert wird.</p>
+<h3 id="mu-ide-einrichten">Mu IDE einrichten</h3>
+<p>Der Online-Editor ist für erste Versuche geeignet, um echte Projekte umzusetzen eignet sich eine lokale "Integrierte Entwicklungsumgebung" (Integrated Development Environment, IDE) besser. Für diese Beschreibung verwende ich <a href="https://codewith.mu">mu</a>. Mu ist eine sehr einfache IDE für MicroPython.</p>
+<h3 id="mu-ide-testen">Mu IDE testen</h3>
+<p>Stelle sicher dass dein Micro:bit mit deinem Rechner verbunden ist und das externe Laufwerk "MICROBIT" angezeigt wird. Starte dann Mu im Micro:bit Modus.</p>
+<p>Das erste Program mit Mu, zum testen ob die Integration funktioniert ist:</p>
+<pre><code class="language-python">from microbit import *
+
+while True:
+    display.scroll('Hello')
+    sleep(1000)
+</code></pre>
+<p>Gib dieses Program in Mu ein und drück den Knopf "Aufspielen". </p>
+<p><img alt="mu_ide.png" src="mu_ide.png" /></p>
+<p>Nach ein paar Sekunden erscheint auf dem LED-Display des Mirco:bit der Text "Hello", gefolgt von einer kurzen Pause.</p>
+<h2 id="mini-projekte">Mini-Projekte</h2>
+<p>Nachdem Mu eingerichtet ist können wir mit ersten Mini-Projekten starten um die verfügbaren Sensoren, Taster und Ausgabe-Optionen kennenzulernen.</p>
+<p>Die <a href="https://python.microbit.org/v/3/reference">API Referenz</a> (Application Programming Interface, API) findest du integriert im Micro:bit Python Online Editor.</p>
+<h3 id="dot-matrix-display">Dot-Matrix-Display</h3>
+<p>Die Mirco:bit API stellt ein "display" Objekt bereit, mit dem auf einfach Texte und vordefinierte Bilder auf dem Dot-Matrix-Display angezeigt werden können.</p>
+<h4 id="vordefinierte-grafiken">Vordefinierte Grafiken</h4>
+<p>Bilder können über Konstanten ausgewählt werden. Ein Herz kann z.B. mit dem folgenden Skript angezeigt werden:</p>
+<pre><code class="language-python">from microbit import *
+
+display.show(Image.HEART)
+sleep(1000)
+</code></pre>
+<p>Die Liste mit allen vordefinierten Bildern findet sich in der <a href="https://python.microbit.org/v/3/api/microbit.Image">API</a>. </p>
+<p>Das folgende Skript zeigt im Wechsel das große und kleine Herz dar:</p>
+<pre><code class="language-python">from microbit import *
+
+while True:
+    display.show(Image.HEART)
+    sleep(1000)
+    display.show(Image.HEART_SMALL)
+    sleep(1000)
+</code></pre>
+<h4 id="text-scrollen">Text scrollen</h4>
+<h4 id="text-anzeigen">Text anzeigen</h4>
+<h4 id="pixel">Pixel</h4>
+<h3 id="knopfe">Knöpfe</h3>
+<h3 id="accelerometer">Accelerometer</h3>
+<h3 id="bluetooth">Bluetooth</h3>
+<h3 id="licht-sensor">Licht-Sensor</h3>
+<h3 id="temperatur-sensor">Temperatur-Sensor</h3>
+<h3 id="kompass">Kompass</h3>
+<h3 id="tone">Töne</h3>
+<h3 id="mikrofon">Mikrofon</h3>
+<h3 id="touch-logo">Touch-Logo</h3>
+<h2 id="projekt-schrittzahler">Projekt Schrittzähler</h2>
+<p>Mirco:bit als Schrittzähler</p>
+<h2 id="projekt-tracks">Projekt Tracks</h2>
+<p>Tracks aufzeichnen mit Kompass und Beschleunigungssensor</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/makes-hacks-hip/microbit" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.4.2
+Build Date UTC : 2022-11-09 17:55:35.184530+00:00
+-->
